@@ -4,6 +4,7 @@
 body {
   font-family: "Inter", Arial, sans-serif;
   margin: 0;
+  background-color: #e5ecff;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
   padding: 50px 100px;
   padding-bottom: 20px;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 4px black;
   text-align: center;
 
   #logo {
@@ -20,13 +21,6 @@ header {
     max-width: 200px;
     min-width: 100px;
     filter: drop-shadow(2px 2px 4px black);
-  }
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 50px;
-    padding-bottom: 10px;
   }
 }
 
@@ -48,21 +42,23 @@ header {
   gap: 20px;
 }
 
-.timeline-row > div {
-  flex: 1;
-}
-
 .card {
   aspect-ratio: 1 / 1;
   min-width: 240px;
-  border: 1px solid #ddd;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+  background-color: white;
+  box-shadow: 4px 4px 8px;
 }
 
-.card > .bg {
-  
+.card > #bg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 .card > .info {
@@ -75,7 +71,14 @@ header {
   box-sizing: border-box;
 
   h2 {
+    font-size: 2em;
     margin: 0px;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    font-weight: 200;
+    margin: 10px 0px;
   }
 }
 
@@ -95,7 +98,9 @@ header {
 }
 
 .card:hover > .description {
-  background-color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(to bottom, rgba(0, 24, 66, 1) 50%, rgba(0, 24, 66, 0.15));
+  color: white;
+  text-shadow: 2px 2px 1px black;
   visibility: visible;
 }
 
@@ -103,9 +108,31 @@ body > p {
   text-align: center;
 }
 
+#mobile-help {
+  display: none;
+  margin-bottom: 0px;
+}
+
 @media (max-height: 900px) {
-  body > p {
+  header {
+    padding: 50px;
+    padding-bottom: 10px;
+  }
+
+  #help {
+    display: none;
+  }
+
+  #mobile-help {
+    display: block;
     font-size: 12px;
+  }
+
+  .timeline-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .card {
