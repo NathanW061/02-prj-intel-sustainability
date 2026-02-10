@@ -8,16 +8,105 @@ body {
 
 header {
   background: linear-gradient(to bottom, #002f81, #001842);
-  padding: 10px;
+  padding: 50px 100px;
+  padding-bottom: 20px;
   color: white;
   text-shadow: 1px 1px 2px black;
   text-align: center;
-}
 
-#logo {
+  #logo {
     display: inline-block;
     width: 25%;
     max-width: 200px;
     min-width: 100px;
     filter: drop-shadow(2px 2px 4px black);
   }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 50px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Timeline Container */
+.timeline-container {
+  gap: 20px;
+  padding: 20px;
+  overflow-x: scroll;
+}
+
+.timeline-contents{
+  width: min-content;
+}
+
+.timeline-contents > .timeline-separator {
+  height: 2px;
+  width: 100%;
+  margin: 20px 0px;
+  background-color: #ccc;
+}
+
+.timeline-row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.timeline-row > div {
+  flex: 1;
+}
+
+.card {
+  aspect-ratio: 1 / 1;
+  min-width: 260px;
+  max-width: 260px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card > .info {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  h2 {
+    margin: 0px;
+  }
+}
+
+.card > .description {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  visibility: hidden;
+  
+  p {
+    margin: 0px;
+  }
+}
+
+.card:hover > .description {
+  background-color: rgba(255, 255, 255, 0.9);
+  visibility: visible;
+}
+
+body > p {
+  text-align: center;
+}
+
+@media (max-height: 600px) {
+
+}
